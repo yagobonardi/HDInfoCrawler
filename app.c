@@ -14,23 +14,17 @@ int main() {
     char linha[1000];
     while (fgets(linha, sizeof(linha), file)) {
         if (strstr(linha, "Hard Disk Model ID") != NULL) {
-            printf("%s", linha);
-			printf("\n");
+            printf("%s\n", linha);
         } else if (strstr(linha, "Hard Disk Serial Number") != NULL) {
-			printf("%s", linha);
-			printf("\n");
+			printf("%s\n", linha);
 		} else if (strstr(linha, "Power On Time") != NULL) {
-			printf("%s", linha);
-			printf("\n");
+			printf("%s\n", linha);
 		} else if (strstr(linha, "Health") != NULL) {
-			printf("%s", linha);
-			printf("\n");
+			printf("%s\n", linha);
 		} else if (strstr(linha, "Performance") != NULL) {
-			printf("%s", linha);
-			printf("\n");
+			printf("%s\n", linha);
 		} else if (strstr(linha, "Bytes Per Sector") != NULL) {
-			printf("%s", linha);
-			printf("\n");
+			printf("%s\n", linha);
 		} 
     }
 
