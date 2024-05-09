@@ -6,25 +6,20 @@ int main() {
     if (file == NULL) {
         printf("Não foi possível abrir o arquivo.\n");
         return 1;
-    } else {
+    } 
+	else {
 		printf("Arquivo aberto.\n");
 	}
 
     char linha[1000];
+	char *lista[] = {"Hard Disk Model ID", "Hard Disk Serial Number", "Power On Time", "Health", "Performance", "Bytes Per Sector" }
+
     while (fgets(linha, sizeof(linha), file)) {
-        if (strstr(linha, "Hard Disk Model ID") != NULL) {
-            printf("%s\n", linha);
-        } else if (strstr(linha, "Hard Disk Serial Number") != NULL) {
-			printf("%s\n", linha);
-		} else if (strstr(linha, "Power On Time") != NULL) {
-			printf("%s\n", linha);
-		} else if (strstr(linha, "Health") != NULL) {
-			printf("%s\n", linha);
-		} else if (strstr(linha, "Performance") != NULL) {
-			printf("%s\n", linha);
-		} else if (strstr(linha, "Bytes Per Sector") != NULL) {
-			printf("%s\n", linha);
-		} 
+		for (int i = 0; i < sizeof(lista); i++) {
+			if (strstr(linha, lista[i]) != NULL) {
+				printf("%s\n", linha);
+			}
+		}
     }
 
     fclose(file);
