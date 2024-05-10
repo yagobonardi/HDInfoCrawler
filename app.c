@@ -11,8 +11,10 @@ int main() {
 		printf("Arquivo aberto.\n");
 	}
 
-    char linha[1000];
-	char *lista[] = {"Hard Disk Model ID", "Hard Disk Serial Number", "Power On Time", "Health", "Performance", "Bytes Per Sector" }
+	fseek(file, 0L, SEEK_END);
+	long size = ftell(file);
+	char linha[size];
+	char *lista[] = {"Hard Disk Model ID", "Hard Disk Serial Number", "Power On Time", "Health", "Performance", "Bytes Per Sector" };
 
     while (fgets(linha, sizeof(linha), file)) {
 		for (int i = 0; i < sizeof(lista); i++) {
